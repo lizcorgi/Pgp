@@ -229,7 +229,7 @@ extends Horde_Pgp_Element
                     if (!$p ||
                         (($topkey->key !== $p) &&
                          !$this->_parseVerify($topkey->key, $p, $val))) {
-                        continue;
+                        continue 2;
                     }
 
                     $encrypt = new stdClass;
@@ -252,13 +252,13 @@ extends Horde_Pgp_Element
                                         $encrypt->fingerprint = $p->fingerprint;
                                         $encrypt->id = $p->key_id;
                                         $this->_cache['encrypt'][] = $encrypt;
-                                        continue 3;
+                                        continue 4;
                                     }
                                 }
 
                                 /* If the flag wasn't set, we know explicitly
                                  * that this is not an encrypting key. */
-                                continue 2;
+                                continue 3;
                             }
                         }
                     }
@@ -304,8 +304,12 @@ extends Horde_Pgp_Element
         }
 
         if ($fallback && empty($this->_cache['encrypt'])) {
-            $fallback->fingerprint = $fallback->key->fingerprint;
-            $fallback->id = $fallback->key->key_id;
+            $key =  $fallback->key;
+            if(property_exists($key, 'key')) {
+                $key = $key->key;
+            }
+            $fallback->fingerprint = $key->fingerprint;
+            $fallback->id = $key->key_id;
             $this->_cache['encrypt'][] = $fallback;
         }
     }

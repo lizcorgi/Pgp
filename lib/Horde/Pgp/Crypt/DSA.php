@@ -43,9 +43,9 @@
  * @package   Pgp
  */
 
-use phpseclib\Crypt;
-use phpseclib\Crypt\Random;
-use phpseclib\Math\BigInteger;
+use phpseclib3\Crypt;
+use phpseclib3\Crypt\Random;
+use phpseclib3\Math\BigInteger;
 
 /**
  * DSA (Digital Signature Algorithm) implementation.

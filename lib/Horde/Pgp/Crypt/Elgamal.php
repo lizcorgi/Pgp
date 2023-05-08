@@ -11,8 +11,8 @@
  * @package   Pgp
  */
 
-use phpseclib\Crypt\Random;
-use phpseclib\Math\BigInteger;
+use phpseclib3\Crypt\Random;
+use phpseclib3\Math\BigInteger;
 
 /**
  * Elgamal encryption implementation (w/EME-PKCS1-v1_5 block encoding).

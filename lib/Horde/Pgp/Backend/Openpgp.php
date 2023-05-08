@@ -11,8 +11,8 @@
  * @package   Pgp
  */
 
-use phpseclib\Crypt;
-use phpseclib\Math\BigInteger;
+use phpseclib3\Crypt;
+use phpseclib3\Math\BigInteger;
 
 /**
  * PGP backend that uses the openpgp-php library.
@@ -38,11 +38,7 @@ extends Horde_Pgp_Backend
     static public function autoload()
     {
         /* Ensure the openpgp-php libraries are autoloaded. */
-        if (file_exists(__DIR__ . '/vendor/autoload.php')) {
-            require_once __DIR__ . '/vendor/autoload.php';
-        } else {
-            require_once __DIR__ . '/../../../../bundle/vendor/autoload.php';
-        }
+        require_once(__DIR__ . '/../../../../vendor/autoload.php');
     }
 
     /**
