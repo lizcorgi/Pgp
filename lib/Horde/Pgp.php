@@ -258,6 +258,11 @@ class Horde_Pgp
      */
     public function decrypt($text, $key)
     {
+        //support unarmored messages
+        if(!str_starts_with($text, '-----')) {
+            $text = OpenPGP::enarmor($text, 'PGP MESSAGE');
+        }
+
         return $this->_runInBackend(
             'decrypt',
             array(
