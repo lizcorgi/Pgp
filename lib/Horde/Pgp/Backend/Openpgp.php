@@ -208,7 +208,7 @@ extends Horde_Pgp_Backend
      * Encrypt a secret key packet.
      *
      * @param OpenPGP_SecretKeyPacket $p    Secret key packet.
-     * @param \phpseclib\Crypt\RSA $cipher  RSA cipher object.
+     * @param \phpseclib3\Crypt\RSA $cipher  RSA cipher object.
      * @param OpenPGP_S2K $s2k              OpenPGP String-to-key object.
      * @param string $iv                    Initial vector.
      */

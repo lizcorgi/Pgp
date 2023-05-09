@@ -72,9 +72,9 @@ class Horde_Pgp_Crypt_DSA
     /**
      * Generate a number that lies between 0 and q-1.
      *
-     * @param \phpseclib\Math\BigInteger $q  Max number.
+     * @param \phpseclib3\Math\BigInteger $q  Max number.
      *
-     * @return \phpseclib\Math\BigInteger  Generated number.
+     * @return \phpseclib3\Math\BigInteger  Generated number.
      */
     static public function randomNumber($q)
     {
@@ -112,13 +112,13 @@ class Horde_Pgp_Crypt_DSA
     /**
      * DSA keypair creation.
      *
-     * @param \phpseclib\Math\BigInteger $p  p
-     * @param \phpseclib\Math\BigInteger $q  q
-     * @param \phpseclib\Math\BigInteger $g  g
+     * @param \phpseclib3\Math\BigInteger $p  p
+     * @param \phpseclib3\Math\BigInteger $q  q
+     * @param \phpseclib3\Math\BigInteger $g  g
      *
      * @return array  Keys:
-     *   - x: (\phpseclib\Math\BigInteger) Private key.
-     *   - y: (\phpseclib\Math\BigInteger) Public key.
+     *   - x: (\phpseclib3\Math\BigInteger) Private key.
+     *   - y: (\phpseclib3\Math\BigInteger) Public key.
      */
     public function generate($p, $q, $g)
     {
@@ -184,8 +184,8 @@ class Horde_Pgp_Crypt_DSA
      *
      * @param string $message            Message.
      * @param string $hash_alg           Hash algorithm.
-     * @param \phpseclib\Math\BigInteger $r  r.
-     * @param \phpseclib\Math\BigInteger $s  s.
+     * @param \phpseclib3\Math\BigInteger $r  r.
+     * @param \phpseclib3\Math\BigInteger $s  s.
      *
      * @return bool  True if verified.
      */
