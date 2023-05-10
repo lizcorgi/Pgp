@@ -388,7 +388,11 @@ class Horde_Pgp
         foreach ($this->_backends as $val) {
             try {
                 return call_user_func_array(array($val, $cmd), $args);
-            } catch (Exception $e) {}
+            } catch (\Exception $e) {
+                if(filled($e->getMessage())){
+                    throw new Horde_Pgp_Exception($e);
+                }
+            }
         }
 
         throw new Horde_Pgp_Exception($error);
