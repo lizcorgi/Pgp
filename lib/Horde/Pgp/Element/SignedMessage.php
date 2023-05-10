@@ -70,7 +70,7 @@ extends Horde_Pgp_Element
     public function __construct($data, array $headers = array())
     {
         if (!($data instanceof OpenPGP_Message)) {
-            Horde_Pgp_Backend_Openpgp::autoload();
+            //Horde_Pgp_Backend_Openpgp::autoload();
             $msg = new OpenPGP_Message();
 
             /* Trailing (CR)LF is not part of signed data. */

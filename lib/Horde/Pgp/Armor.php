@@ -184,7 +184,7 @@ implements Countable, SeekableIterator
                 $checksum = base64_decode(substr($data, $pos + 2, 4));
                 $data = base64_decode(substr($data, 0, $pos));
 
-                Horde_Pgp_Backend_Openpgp::autoload();
+                //Horde_Pgp_Backend_Openpgp::autoload();
                 $data_checksum = substr(pack('N', OpenPGP::crc24($data)), 1);
                 if ($data_checksum !== $checksum) {
                     // Checksum error!

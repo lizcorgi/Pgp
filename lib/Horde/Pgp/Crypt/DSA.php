@@ -104,7 +104,7 @@ class Horde_Pgp_Crypt_DSA
      */
     public function __construct(OpenPGP_PublicKeyPacket $key)
     {
-        Horde_Pgp_Backend_Openpgp::autoload();
+        //Horde_Pgp_Backend_Openpgp::autoload();
 
         $this->_key = $key;
     }

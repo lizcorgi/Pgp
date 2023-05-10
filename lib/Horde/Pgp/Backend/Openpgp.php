@@ -35,18 +35,18 @@ extends Horde_Pgp_Backend
     /**
      * Autoload necessary libraries.
      */
-    static public function autoload()
-    {
+    //static public function autoload()
+    //{
         /* Ensure the openpgp-php libraries are autoloaded. */
-        require_once(__DIR__ . '/../../../../vendor/autoload.php');
-    }
+    //    require_once(__DIR__ . '/../../../../vendor/autoload.php');
+    //}
 
     /**
      * Constructor.
      */
     public function __construct()
     {
-        self::autoload();
+      //  self::autoload();
     }
 
     /**

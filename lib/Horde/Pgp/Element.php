@@ -84,7 +84,7 @@ abstract class Horde_Pgp_Element
     public function __construct($data, array $headers = array())
     {
         if (!($data instanceof OpenPGP_Message)) {
-            Horde_Pgp_Backend_Openpgp::autoload();
+            //Horde_Pgp_Backend_Openpgp::autoload();
             $data = OpenPGP_Message::parse($data);
         }
 
